@@ -1,12 +1,12 @@
 import java.util.*;
 
-class Node {
-    int value;
+class Node
+{
+    int data;
     Node next;
-    Node(int value) {
-        this.value = value;
-    }
+    Node(int d) {data = d; next = null; }
 }
+
 
 class ReverseALinkedList{
     public static void main(String[] args){
@@ -44,7 +44,7 @@ class ReverseALinkedList{
     static void display(Node head){
         Node ptr = head; 
         while(ptr != null){
-            System.out.print(ptr.value + " -> "); 
+            System.out.print(ptr.data + " -> ");
             ptr = ptr.next; 
         }
     }
