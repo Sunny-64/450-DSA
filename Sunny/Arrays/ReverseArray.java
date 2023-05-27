@@ -1,5 +1,3 @@
-package Sunny.Arrays;
-
 import java.util.Arrays;
 
 // Reverse an Array 
