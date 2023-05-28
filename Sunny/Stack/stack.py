@@ -1,24 +1,29 @@
 class Stack: 
-    DefaultSize = 10
+    __DefaultSize = 10
     stack = []
     top = -1
     def __init__(self, size = None):
         if(size == None):
-            self.size = self.DefaultSize
+            self.size = self.__DefaultSize
         else:
             self.size = size
     
     def push(self, element):
         self.top += 1
-        self.stack.append(element)
+        if(len(self.stack) >= self.size):
+            raise Exception("Stack is full")
+        else:
+            self.stack.append(element)
         
     def pop(self):
-        self.top -= 1
-
+        if self.top != -1:
+            self.top -= 1
+        else:
+            raise Exception("top is -1")
+            
     def display(self):
         for i in range(0, self.top + 1): 
             print(self.stack[i])
-
 
 # Custom Stack 
 
@@ -32,12 +37,10 @@ stack1.display()
 
 print("\n")
 
-stack1.pop()
-
 stack1.display()
 
 print("\n")
 
 
-print(stack1.DefaultSize)
+# print(stack1.__DefaultSize)
 
